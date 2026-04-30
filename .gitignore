@@ -1,0 +1,13 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# data
+data/
+
+# models
+models/
+
+# mac
+.DS_Store
