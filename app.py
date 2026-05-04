@@ -184,15 +184,12 @@ if st.query_params.get("restart") == "1":
 # Settings
 # =========================
 MODEL_PATH = "models/resnet50_full.pth"
-DATA_DIR = "data/processed/train"
 MODEL_NAME = "resnet50"
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-class_names = sorted([
-    d for d in os.listdir(DATA_DIR)
-    if os.path.isdir(os.path.join(DATA_DIR, d))
-])
+with open("class_names.txt", "r") as f:
+    class_names = [line.strip() for line in f if line.strip()]
 
 num_classes = len(class_names)
 

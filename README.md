@@ -136,10 +136,13 @@ Streamlit 기반 GUI를 통해 이미지를 업로드하면
 ## How to Run
 
 1️⃣ 가상환경 생성 및 활성화
+
 python3 -m venv venv
+
 source venv/bin/activate   # Mac / Linux
 
 2️⃣ 필요한 라이브러리 설치
+
 pip install -r requirements.txt
 
 ❗ 만약 torch 관련 에러가 발생하면:
@@ -147,4 +150,5 @@ pip install -r requirements.txt
 pip install torch torchvision
 
 3️⃣ 실행
-streamlit run app.py
+
+python -m streamlit run app.py
