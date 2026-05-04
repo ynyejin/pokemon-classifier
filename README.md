@@ -61,7 +61,27 @@
 
 ---
 
-## 5. Analysis
+## 5. Learning Curve
+
+### ResNet50 Scratch
+<img src="assets/learning_curve_resnet50_scratch.png" width="500"/>
+
+ResNet50 scratch 모델의 learning curve를 보면 training loss가 epoch이 증가함에 따라 꾸준히 감소하는 것을 확인할 수 있다.  
+이는 모델이 데이터의 특징을 점진적으로 학습하고 있음을 의미한다.  
+다만 validation loss는 일부 구간에서 변동이 나타나며, 이는 제한된 epoch으로 인해 충분히 안정적으로 수렴하지 못했을 가능성을 보여준다.
+
+
+### ResNet50 Pretrained (Full Fine-tuning)
+<img src="assets/learning_curve_resnet50_full.png" width="500"/>
+
+두 번째 그래프는 pretrained ResNet50 모델의 learning curve를 나타낸다.  
+해당 모델은 ImageNet으로 사전 학습된 가중치를 사용하고 전체 네트워크를 fine-tuning한 결과이다.  
+scratch 모델과 비교했을 때 훨씬 빠르게 loss가 감소하며, 더 낮은 loss 값에 수렴하는 것을 확인할 수 있다.  
+이는 전이학습(transfer learning)이 학습 속도와 성능 향상에 큰 영향을 미친다는 것을 보여준다.
+
+---
+
+## 6. Analysis
 
 ### (1) Pretrained vs Scratch ⭐
 ResNet50 pretrained 모델의 정확도는 91.43%인 반면,  
@@ -95,7 +115,7 @@ Recall 또한 pretrained + fine-tuning 모델에서 가장 높게 나타났으�
 
 ---
 
-## 6. Demo
+## 7. Demo
 ![demo](assets/demo.png)
 
 ### Full Video
@@ -106,7 +126,7 @@ Streamlit 기반 GUI를 통해 이미지를 업로드하면
 
 ---
 
-## 7. Conclusion
+## 8. Conclusion
 
 - Transfer learning(pretrained)이 성능 향상에 매우 중요한 역할을 한다.
 - Fine-tuning은 모델 성능을 크게 개선한다.
